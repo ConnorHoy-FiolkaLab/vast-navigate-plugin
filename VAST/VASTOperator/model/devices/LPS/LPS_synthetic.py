@@ -1,4 +1,5 @@
-class PluginDevice:
+class SyntheticLPS:
+    """Synthetic LPS and VAST Fluoroimager class"""
     def __init__(self, device_connection, *args):
         pass
 
@@ -11,9 +12,8 @@ class PluginDevice:
         commands : dict
             commands that the device supports
         """
-        return {"move_plugin_device": lambda *args: self.move(args[0])}
-
-    def move(self, *args):
-        """An example function: to move the device"""
-        print("move device", args)
-        pass
+        return {
+            "move_plugin_device": lambda *args: print(
+                f"move synthetic plugin device {args[0]}!"
+            )
+        }
